@@ -50,7 +50,6 @@ const updateNote = async (req, res) => {
 const deleteNote = async (req, res) => {
   try {
     const { id } = req.params;
-    console.log(id);
     const deleteNote = await NoteDb.findByIdAndDelete(id);
     if (!deleteNote) {
       res.status(400).json({ message: "note not found!" });

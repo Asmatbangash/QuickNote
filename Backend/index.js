@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import { router } from "./src/routes/Note.routes.js";
 import { dbConnection } from "./src/DB/db.connect.js";
+import cors from "cors";
 const app = express();
 
 dotenv.config();
@@ -10,6 +11,7 @@ const port = process.env.PORT || 3000;
 dbConnection();
 
 // middle ware
+app.use(cors());
 app.use(express.json());
 app.use("/api/v1/noteapp/", router);
 

@@ -1,5 +1,20 @@
+import { Routes, Route } from "react-router-dom";
+import { CreateNote, Home } from "./pages";
+import { Footer, Navbar } from "./components";
+
 function App() {
-  return <h1 class="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <div>
+      <Navbar />
+      <main className="min-h-screen">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/create-note" element={<CreateNote />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
