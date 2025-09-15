@@ -31,7 +31,7 @@ function CreateNote() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-scree p-4 my-10 ">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-10 px-[15px] sm:px-10 flex justify-center items-center">
       <div className="w-full max-w-md bg-[#000022] text-white rounded-2xl shadow-lg p-6 border border-amber-50">
         <h2 className="text-2xl font-bold text-center mb-6">Create Note</h2>
 

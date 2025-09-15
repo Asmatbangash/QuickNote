@@ -13,7 +13,7 @@ export const NoteContext = createContext({
 
 function NoteProvider({ children }) {
   const [note, setNote] = useState([]);
-  const [loading, setLoading] = useState();
+  const [loading, setLoading] = useState(true);
 
   // create-note funcation
   const createNote = async (formData) => {
@@ -36,6 +36,8 @@ function NoteProvider({ children }) {
       setNote(res.data);
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -82,7 +84,7 @@ function NoteProvider({ children }) {
 
   return (
     <NoteContext.Provider
-      value={{ note, createNote, getNote, updateNote, deleteNote }}
+      value={{ note, loading, createNote, getNote, updateNote, deleteNote }}
     >
       {children}
     </NoteContext.Provider>
