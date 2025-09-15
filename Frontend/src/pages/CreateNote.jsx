@@ -1,8 +1,11 @@
 import React, { useContext, useState } from "react";
 import { NoteContext } from "../Context/NoteContex";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function CreateNote() {
   const { createNote } = useContext(NoteContext);
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     title: "",
@@ -17,6 +20,14 @@ function CreateNote() {
     e.preventDefault();
     createNote(formData);
     setFormData({ title: "", content: "" });
+    toast.success("note created successfully!.", {
+      position: "top-center",
+      autoClose: 1500,
+    });
+    setTimeout(() => {
+      navigate("/");
+      window.location.reload();
+    }, 1500);
   };
 
   return (
