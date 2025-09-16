@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000;
 dbConnection();
 
 // middle ware
-app.use(cors();
+app.use(cors());
 app.use(express.json());
 app.use("/api/v1/noteapp/", router);
 
