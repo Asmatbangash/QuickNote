@@ -14,7 +14,7 @@ dbConnection();
 app.use(
   cors({
     origin: ["https://quick-note-orpin.vercel.app"],
-    methods: ["GET", "POST", "DELETE", "UPDATE"],
+    methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   })
 );
