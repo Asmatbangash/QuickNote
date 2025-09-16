@@ -11,9 +11,7 @@ const port = process.env.PORT || 3000;
 dbConnection();
 
 // middle ware
-app.use(cors({ origin: ["https://quick-note-orpin.vercel.app"],
-    methods: ["GET", "POST", "DELETE", "UPDATE"],
-    credentials: true,}));
+app.use(cors();
 app.use(express.json());
 app.use("/api/v1/noteapp/", router);
 
