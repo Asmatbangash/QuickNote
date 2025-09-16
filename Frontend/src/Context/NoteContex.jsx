@@ -19,7 +19,7 @@ function NoteProvider({ children }) {
   const createNote = async (formData) => {
     try {
       const res = await axios.post(
-        "http://localhost:4000/api/v1/noteapp/create-note",
+        "https://quick-note-29ro.vercel.app/api/v1/noteapp/create-note",
         formData
       );
     } catch (error) {
@@ -31,7 +31,7 @@ function NoteProvider({ children }) {
   const getNote = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:4000/api/v1/noteapp/get-notes"
+        "https://quick-note-29ro.vercel.app/api/v1/noteapp/get-notes"
       );
       setNote(res.data);
     } catch (error) {
@@ -45,7 +45,7 @@ function NoteProvider({ children }) {
   const updateNote = async (id, title, content) => {
     try {
       const updateTheNote = await axios.put(
-        `http://localhost:4000/api/v1/noteapp/update-note/${id}`,
+        `https://quick-note-29ro.vercel.app/api/v1/noteapp/update-note/${id}`,
         { title, content }
       );
       toast.success("Note updated successfully!.", {
@@ -64,7 +64,7 @@ function NoteProvider({ children }) {
   const deleteNote = async (id) => {
     try {
       const deleteTheNote = await axios.delete(
-        `http://localhost:4000/api/v1/noteapp/delete-note/${id}`
+        `https://quick-note-29ro.vercel.app/api/v1/noteapp/delete-note/${id}`
       );
       toast.success("Note deleted successfully!.", {
         position: "top-center",
